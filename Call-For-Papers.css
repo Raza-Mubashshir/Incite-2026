@@ -992,7 +992,7 @@
 .nav-menu li:hover > a:before,
 .nav-menu .menu-active > a:before {
   visibility: visible;
-  width: 13%;
+  width: 100%;
 }
 
 /* Mobile Nav Toggle */
@@ -1212,6 +1212,7 @@ footer {
 }
 
 #faq #faq-list a {
+  
   padding: 18px 0;
   display: block;
   position: relative;
