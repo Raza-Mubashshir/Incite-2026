@@ -3280,6 +3280,9 @@ body {
 
   transition: all 0.125s;
   transform: scale(1) translateY(0px);
+
+  overflow: hidden;
+
 }
 
 /* Elements */
@@ -3324,12 +3327,17 @@ body {
   margin-bottom: 0;
   margin-left: 0;
 }
+* {
+  box-sizing: border-box;
+}
+
 .card__img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: 300px;
-  width: 275px;
+  object-fit: cover; /* Ensures image fills the box without distortion */
 }
+
 .card__header {
   position: relative;
   z-index: 1;
