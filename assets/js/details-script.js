@@ -23,6 +23,9 @@
       closeColor: '#fff',
       share: false
     });
+
+    // Equalize card heights after images load
+    setTimeout(equalizeCardHeights, 100);
   });
 
   // Initiate superfish on nav menu
@@ -132,6 +135,22 @@
   $(window).on('load', function() {
     aos_init();
   });
+
+  // Re-equalize on resize
+  $(window).on('resize', function(){
+    equalizeCardHeights();
+  });
+
+  function equalizeCardHeights(){
+    var maxH = 0;
+    var $cards = $('article.card .card__wrapper');
+    $cards.css('height','');
+    $cards.each(function(){
+      var h = $(this).outerHeight();
+      if(h > maxH){ maxH = h; }
+    });
+    if(maxH > 0){ $cards.css('height', maxH + 'px'); }
+  }
 
 })(jQuery);
 
